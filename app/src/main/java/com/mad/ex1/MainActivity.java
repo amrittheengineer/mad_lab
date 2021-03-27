@@ -6,40 +6,54 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textToManipulate;
-    private Button changeSize, changeColor;
-    private int fontSize = 24, colorPos = 0;
-    private final int[] COLORS = new int[]{Color.RED, Color.BLUE, Color.GREEN, Color.MAGENTA, Color.YELLOW, Color.CYAN, Color.BLACK};
+    private EditText num1, num2;
+    private Button add_btn, sub_btn, clear_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textToManipulate = findViewById(R.id.textToManipulate);
-        changeSize = findViewById(R.id.changeSize);
-        changeColor = findViewById(R.id.changeColor);
+        num1 = findViewById(R.id.num1);
+        num2 = findViewById(R.id.num2);
+        add_btn = findViewById(R.id.add_btn);
+        sub_btn = findViewById(R.id.sub_btn);
+        clear_btn = findViewById(R.id.clear_btn);
 
-        changeSize.setOnClickListener(new View.OnClickListener() {
+        clear_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fontSize += 4;
-                textToManipulate.setTextSize(fontSize);
-                if (fontSize > 50){
-                    fontSize = 24;
-                }
+                num1.setText("");
+                num2.setText("");
+                Toast.makeText(MainActivity.this, "Cleared.", Toast.LENGTH_SHORT).show();
             }
         });
 
-        changeColor.setOnClickListener(new View.OnClickListener() {
+        add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textToManipulate.setTextColor(COLORS[colorPos]);
-                colorPos = (colorPos + 1) % COLORS.length;
+                float val1, val2;
+                val1 = Float.parseFloat(num1.getText().toString());
+                val2 = Float.parseFloat(num2.getText().toString());
+
+                Toast.makeText(MainActivity.this, "Sum = " + (val1 + val2), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        sub_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                float val1, val2;
+                val1 = Float.parseFloat(num1.getText().toString());
+                val2 = Float.parseFloat(num2.getText().toString());
+
+                Toast.makeText(MainActivity.this, "Difference = " + (val1 - val2), Toast.LENGTH_SHORT).show();
             }
         });
     }
