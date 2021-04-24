@@ -7,31 +7,146 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:padding="24dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_weight="1"
-        android:id="@+id/textToManipulate"
-        android:textColor="@color/black"
-        android:textSize="24sp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="24dp"
+            android:layout_height="wrap_content"
+            android:text="Enter Emp Id"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="16dp"
+            android:id="@+id/empId"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="24dp"
+            android:layout_height="wrap_content"
+            android:text="Enter Name"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="16dp"
+            android:id="@+id/name"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="24dp"
+            android:layout_height="wrap_content"
+            android:text="Enter Salary"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="16dp"
+            android:id="@+id/salary"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center"
-        />
+        >
 
-    <Button
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Employee"
+            android:id="@+id/add_btn"
+            android:layout_margin="8dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Employee"
+            android:layout_margin="8dp"
+            android:id="@+id/delete_btn"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Change Font Size"
-        android:id="@+id/changeSize"
-        android:layout_margin="16dp"
-        />
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
 
-    <Button
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modify Employee"
+            android:id="@+id/modify_btn"
+            android:layout_margin="8dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Employee"
+            android:layout_margin="8dp"
+            android:id="@+id/view_btn"
+            />
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Change Color"
-        android:layout_margin="16dp"
-        android:id="@+id/changeColor"
-        />
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View All Employee"
+            android:layout_margin="8dp"
+            android:id="@+id/view_all_btn"
+            />
+
+    </LinearLayout>
+
+
 </LinearLayout>
